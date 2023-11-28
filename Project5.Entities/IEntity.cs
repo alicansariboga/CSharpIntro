@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project5.Entities
 {
-    public class Customer : IEntity
+    // for signing 
+    // object of database (entity architecture)
+    public interface IEntity
     {
-        public int CustomerId { get; set; }
-        public string ContactName{ get; set; }
+
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Project5.Entities
 {
-    public class Customer : IEntity
+    public class Order : IEntity // signing
     {
-        public int CustomerId { get; set; }
-        public string ContactName{ get; set; }
+        public int Id { get; set; }
     }
 }

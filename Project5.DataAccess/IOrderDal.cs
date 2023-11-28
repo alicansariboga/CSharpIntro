@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Project5.DataAccess
 {
-    public interface ICustomerDal : IEntityRepository<Customer>
+    public interface IOrderDal : IEntityRepository<Order>
     {
-        
+
     }
 }
