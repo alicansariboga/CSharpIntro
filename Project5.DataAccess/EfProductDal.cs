@@ -26,9 +26,24 @@ namespace Project5.DataAccess
             Console.WriteLine("Product is added with EF.");
         }
 
+        public void Delete(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Product> GetAll()
         {
             return _products;
+        }
+
+        public List<Product> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }

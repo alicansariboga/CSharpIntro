@@ -14,6 +14,14 @@ namespace Generics
             sehirler.Add("Ankara");
             Console.WriteLine(sehirler.Count); //4
 
+            sehirler[0] = "Istanbul"; //set
+            Console.WriteLine(sehirler[0]); //get
+
+            foreach (var sehir in sehirler)
+            {
+                Console.WriteLine(sehir);
+            }
+
             //MyList<string> sehirler2 = new MyList(); //not generic
             MyList<string> sehirler2 = new MyList<string>();
             sehirler2.Add("Ankara");
@@ -23,7 +31,18 @@ namespace Generics
             sehirler2.Add("Ankara");
             sehirler2.Add("Ankara");
             sehirler2.Add("Ankara");
+
             Console.WriteLine(sehirler2.Count); //7
+
+            //indexing
+            sehirler2[0] = "Istanbul"; //ERROR => indexer
+            Console.WriteLine(sehirler[0]); //get
+
+            foreach (var sehir in sehirler2.Items) // for sehirler 2; GetEnumerator error
+            {
+                Console.WriteLine(sehir);
+            }
+
         }
     }
     class MyList<T> //generic class
@@ -51,5 +70,27 @@ namespace Generics
             get { return _array.Length; } //readonly bc the count using int the list is just readonly.
         }
 
+        // property for sehirler2.Items
+        public T[] Items
+        {
+            get
+            {
+                return _array;
+            }
+        }
+
+        // INDEXER
+        // sehirler2[0] = "Istanbul";
+        public T this[int index]
+        {
+            get
+            {
+                return _array[index];
+            }
+            set
+            {
+                _array[index] = value;
+            }
+        }
     }
 }
