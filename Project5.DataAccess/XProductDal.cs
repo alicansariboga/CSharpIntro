@@ -23,6 +23,7 @@ namespace Project5.DataAccess
         }
         public void Add(Product product)
         {
+            // test // throw new Exception("Can't connect to database. ****** password is no correct.");
             Console.WriteLine("Product is added with X.");
         }
 

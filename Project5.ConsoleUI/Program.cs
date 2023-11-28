@@ -1,5 +1,6 @@
 ﻿using Project5.Business;
 using Project5.DataAccess;
+using Project5.Entities;
 using System;
 
 namespace Project5.ConsoleUI
@@ -15,6 +16,16 @@ namespace Project5.ConsoleUI
             {
                 Console.WriteLine(product.ProductName);
             }
+            try
+            {
+            productManager.Add(new Product { ProductId = 1, ProductName = "Masa", QuantityPerUnit = "4 ayakli masa", UnitInStock = 1000, UnitPrice = 500 });
+            }
+            //catch (Exception exception)
+            catch (DublicateProductException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+
         }
     }
 }

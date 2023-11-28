@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34114.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpIntro", "CSharpIntro\CSharpIntro.csproj", "{5FB575F8-FEE3-421A-A427-4CB401E647F7}"
 EndProject
@@ -39,15 +39,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessModifiersTest", "Acce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{31F67E2B-8ECA-4A27-89B0-8874451DA785}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5.DataAccess", "Project5.DataAccess\Project5.DataAccess.csproj", "{50F01345-A9E4-4107-9E3A-2D07B780CCA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project5.DataAccess", "Project5.DataAccess\Project5.DataAccess.csproj", "{50F01345-A9E4-4107-9E3A-2D07B780CCA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5.Business", "Project5.Business\Project5.Business.csproj", "{81742DC8-DADD-40E8-9360-016CDF410B3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project5.Business", "Project5.Business\Project5.Business.csproj", "{81742DC8-DADD-40E8-9360-016CDF410B3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5.ConsoleUI", "Project5.ConsoleUI\Project5.ConsoleUI.csproj", "{77AD3F62-0EA9-4C06-879B-44DB5272E9A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project5.ConsoleUI", "Project5.ConsoleUI\Project5.ConsoleUI.csproj", "{77AD3F62-0EA9-4C06-879B-44DB5272E9A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project5.Entities", "Project5.Entities\Project5.Entities.csproj", "{73985C27-FF13-435F-8BC1-F74404223321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project5.Entities", "Project5.Entities\Project5.Entities.csproj", "{73985C27-FF13-435F-8BC1-F74404223321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generics", "Generics\Generics.csproj", "{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "ExceptionHandling\ExceptionHandling.csproj", "{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
