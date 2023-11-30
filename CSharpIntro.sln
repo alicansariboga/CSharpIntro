@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project5.Entities", "Projec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generics", "Generics\Generics.csproj", "{1A46B254-0BFB-4C3D-9A5E-A95E60830C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "ExceptionHandling\ExceptionHandling.csproj", "{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling", "ExceptionHandling\ExceptionHandling.csproj", "{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqProject", "LinqProject\LinqProject.csproj", "{F4403E8F-FA47-4261-A123-74E759E1575C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9E2EBDA-2E00-4CDC-B39F-EC5E6AFC2EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4403E8F-FA47-4261-A123-74E759E1575C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4403E8F-FA47-4261-A123-74E759E1575C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4403E8F-FA47-4261-A123-74E759E1575C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4403E8F-FA47-4261-A123-74E759E1575C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
