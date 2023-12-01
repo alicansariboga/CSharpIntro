@@ -37,18 +37,44 @@ namespace LinqProject
 
             //AscDescTest(products);
 
+           // ClassicLinqTest(products);
+
+            //Join operation
+            //Relational Design - RDBMS
+            var result = from p in products
+                         //inner join
+                         join c in categories
+                         on p.CategoryId equals c.CategoryId
+                             //extra condition
+                             /*
+                             where p.UnitPrice > 5000
+                             orderby p.UnitPrice descending
+                             */
+                         select new ProductDto { ProductId=p.ProductId, CategoryName=c.CategoryName, ProductName = p.ProductName, UnitPrice=p.UnitPrice };
+            foreach (var productDto in result)
+            {
+                //Console.WriteLine(productDto.ProductName + " " + productDto.CategoryName);
+                // $ - string interpolation
+                Console.WriteLine("{0} --- {1}", productDto.ProductName, productDto.CategoryName);
+            }
+        }
+
+        private static void ClassicLinqTest(List<Product> products)
+        {
             // the old(another) syntax for linq's
             var result = from p in products
-                         where p.UnitPrice>6000 && p.ProductName.Contains("fon")
+                         where p.UnitPrice > 6000 && p.ProductName.Contains("fon")
                          //orderby p.UnitPrice (default = ascending)
                          //orderby p.UnitPrice descending
                          orderby p.UnitPrice descending, p.ProductName ascending
-                         select p;
+                         //select p;
+                         //select p.ProductName;
+                         //using DTO class
+                         select new ProductDto { ProductId = p.ProductId, ProductName = p.ProductName, UnitPrice = p.UnitPrice };
             foreach (var product in result)
             {
                 Console.WriteLine(product.ProductName);
             }
-
         }
 
         private static void AscDescTest(List<Product> products)
@@ -126,7 +152,15 @@ namespace LinqProject
             return products.Where(p => p.UnitPrice > 18000 && p.UnitInStock > 15 && p.UnitInStock > 10).ToList(); // IEnumerable structure means structure which can loop or iterate and So, this sentence should use with .ToList();
         }
 
-
+        //in classic(old) linq, it(class) can use instead of select p;
+        class ProductDto
+        {
+            //in here, just needed
+            public int ProductId { get; set; }
+            public string CategoryName { get; set; }// attention: Product class has CategoryId but need the CategoryName here. We should use Join operation.
+            public string ProductName { get; set; }
+            public decimal UnitPrice { get; set; }
+        }
     }
     class Product
     {
