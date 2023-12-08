@@ -12,38 +12,69 @@ namespace Project5.DataAccess
         public List<Product> _products;
         public EfProductDal()
         {
-            _products = new List<Product>
-            {
-                new Product{ProductId=1, ProductName="Acer ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=2 },
-                new Product{ProductId=2, ProductName="Asus ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=3 },
-                new Product{ProductId=3, ProductName="HP ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=0 },
-                new Product{ProductId=4, ProductName="Mac ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=1 },
-                new Product{ProductId=5, ProductName="Dell ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=4 }
-            };
+            //_products = new List<Product>
+            //{
+            //    new Product{ProductId=1, ProductName="Acer ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=2 },
+            //    new Product{ProductId=2, ProductName="Asus ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=3 },
+            //    new Product{ProductId=3, ProductName="HP ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=0 },
+            //    new Product{ProductId=4, ProductName="Mac ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=1 },
+            //    new Product{ProductId=5, ProductName="Dell ef Bilgisayar", QuantityPerUnit="32 GB RAM", UnitPrice=10000, UnitInStock=4 }
+            //};
         }
         public void Add(Product product)
         {
-            Console.WriteLine("Product is added with EF.");
+            using (ProjectContext projectContext = new ProjectContext())
+            {
+                projectContext.Products.Add(product);
+                projectContext.SaveChanges(); //transaction
+            }
         }
 
         public void Delete(Product product)
         {
-            throw new NotImplementedException();
+            using (ProjectContext projectContext = new ProjectContext())
+            {
+                //projectContext.Products.Remove(product);
+                projectContext.Products.Remove(projectContext.Products.SingleOrDefault(p => p.ProductId == product.ProductId)); // certain process
+                projectContext.SaveChanges(); //transaction
+            }
         }
 
         public List<Product> GetAll()
         {
-            return _products;
+            //ProjectContext projectContext = new ProjectContext();
+            //return projectContext.Products.ToList();
+            // NOTE: Normally, after this block is executed, the garbageCollector collects the projectContext object and goes away. To prevent this from happening, using method is used here.
+
+            using (ProjectContext projectContext = new ProjectContext())
+            {
+                return projectContext.Products.ToList();
+            }
+            //dispose = throw away from memory fastly
         }
 
-        public List<Product> GetById(int id)
+        public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            using (ProjectContext projectContext = new ProjectContext())
+            {
+                return projectContext.Products.SingleOrDefault(p => p.ProductId == id);
+                // SingleOrDefault == for only 1 data
+                // FirstOrDefault() == If there is more than one data that meets this condition; Returns the first given data.
+
+            }
         }
 
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            using (ProjectContext projectContext = new ProjectContext())
+            {
+                var productToUpdate = projectContext.Products.SingleOrDefault(p => p.ProductId == product.ProductId); // not updated data
+                productToUpdate.ProductName = product.ProductName;
+                productToUpdate.QuantityPerUnit = product.QuantityPerUnit;
+                productToUpdate.UnitPrice = product.UnitPrice;
+                productToUpdate.UnitInStock = product.UnitInStock;
+                projectContext.SaveChanges(); // updated finished and saved.
+            }
         }
     }
 }
