@@ -72,7 +72,10 @@ namespace Project5.DataAccess
                 productToUpdate.ProductName = product.ProductName;
                 productToUpdate.QuantityPerUnit = product.QuantityPerUnit;
                 productToUpdate.UnitPrice = product.UnitPrice;
-                productToUpdate.UnitInStock = product.UnitInStock;
+                productToUpdate.UnitsInStock = product.UnitsInStock;
+                productToUpdate.CategoryId = product.CategoryId;
+
+
                 projectContext.SaveChanges(); // updated finished and saved.
             }
         }
