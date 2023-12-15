@@ -57,6 +57,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkDemo", "Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadingDemo1", "ThreadingDemo1\ThreadingDemo1.csproj", "{CA32F0C1-3FF4-4558-9291-9F81267DB7AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDemo1", "AsyncDemo1\AsyncDemo1.csproj", "{D94E96F8-65C9-4548-9CB5-D16C74138A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asyncdemo3", "Asyncdemo3\Asyncdemo3.csproj", "{1045BE1E-674E-4161-A7EA-6FDE0A1687EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +175,14 @@ Global
 		{CA32F0C1-3FF4-4558-9291-9F81267DB7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA32F0C1-3FF4-4558-9291-9F81267DB7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA32F0C1-3FF4-4558-9291-9F81267DB7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D94E96F8-65C9-4548-9CB5-D16C74138A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D94E96F8-65C9-4548-9CB5-D16C74138A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D94E96F8-65C9-4548-9CB5-D16C74138A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D94E96F8-65C9-4548-9CB5-D16C74138A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1045BE1E-674E-4161-A7EA-6FDE0A1687EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1045BE1E-674E-4161-A7EA-6FDE0A1687EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1045BE1E-674E-4161-A7EA-6FDE0A1687EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1045BE1E-674E-4161-A7EA-6FDE0A1687EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
