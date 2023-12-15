@@ -1,0 +1,4 @@
+﻿Thread: We can think of as a sequence of operations. The most important feature here is that another operation cannot enter the queue or start bedore a operation is completed.
+Multi-Thread: As we guessed, it is a case of using more than one thread, but threads cannot be used under all conditions. The multi-thread use case varies depending on the characteristics of the system. Every system has an optimized value and the server usually adjust it automatically. In case multi-threads are insufficient, the system still works as a single-thread.
+Thread Pool: It is a pool on server(IIS, Apache etc.) created by server.
+Asynchronous Programming: In single thread, before one process ends, another process starts. The most important feature in asynchronous programming is that the first operation does not need to end and the second operation begins.
