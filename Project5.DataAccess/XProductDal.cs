@@ -27,7 +27,17 @@ namespace Project5.DataAccess
             Console.WriteLine("Product is added with X.");
         }
 
+        public Task AddAsync(Product entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(Product entity)
         {
             throw new NotImplementedException();
         }
@@ -37,12 +47,27 @@ namespace Project5.DataAccess
             return _products;
         }
 
+        public Task<List<Product>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetById(int id)
         {
             throw new NotImplementedException();
         }
 
+        public Task<Product> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Product entity)
         {
             throw new NotImplementedException();
         }

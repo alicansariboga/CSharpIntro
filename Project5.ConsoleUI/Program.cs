@@ -11,6 +11,10 @@ namespace Project5.ConsoleUI
         static void Main(string[] args)
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
+            foreach (var item in productManager.GetAllAsync().Result)
+            {
+                Console.WriteLine(item.ProductName);
+            }
 
             // The ProductId value will be automatically assigned in SQL during the adding process.
             // However, the ProductId value must be given for update and delete operations.

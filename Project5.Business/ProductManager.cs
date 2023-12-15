@@ -40,6 +40,11 @@ namespace Project5.Business
             return _productDal.GetAll();
         }
 
+        public Task<List<Product>> GetAllAsync()
+        {
+            return _productDal.GetAllAsync();
+        }
+
         public Product GetById(int id)
         {
             return _productDal.GetById(id);

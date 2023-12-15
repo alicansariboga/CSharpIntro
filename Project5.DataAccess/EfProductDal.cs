@@ -1,4 +1,5 @@
-﻿using Project5.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Project5.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,15 @@ namespace Project5.DataAccess
             }
         }
 
+        // using yapisi disposable pattern dir. Yani bellekte hizli bir skeilde atilma egilimindedir. Dolayisiyla async yapialrda bunun kullanilmamasi gerekir.
+        public async Task AddAsync(Product product)
+        {
+            ProjectContext projectContext = new ProjectContext();
+            await projectContext.Products.AddAsync(product);
+            // SaveChanged da default olarak async versiyonu var. Dolayisiyla onda da kullanilmalidir.
+            await projectContext.SaveChangesAsync();
+        }
+
         public void Delete(Product product)
         {
             using (ProjectContext projectContext = new ProjectContext())
@@ -38,6 +48,11 @@ namespace Project5.DataAccess
                 projectContext.Products.Remove(projectContext.Products.SingleOrDefault(p => p.ProductId == product.ProductId)); // certain process
                 projectContext.SaveChanges(); //transaction
             }
+        }
+
+        public Task DeleteAsync(Product product)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Product> GetAll()
@@ -53,6 +68,12 @@ namespace Project5.DataAccess
             //dispose = throw away from memory fastly
         }
 
+        public Task<List<Product>> GetAllAsync()
+        {
+            ProjectContext projectContext = new ProjectContext();
+            return projectContext.Products.ToListAsync();
+        }
+
         public Product GetById(int id)
         {
             using (ProjectContext projectContext = new ProjectContext())
@@ -62,6 +83,11 @@ namespace Project5.DataAccess
                 // FirstOrDefault() == If there is more than one data that meets this condition; Returns the first given data.
 
             }
+        }
+
+        public Task<Product> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product product)
@@ -78,6 +104,11 @@ namespace Project5.DataAccess
 
                 projectContext.SaveChanges(); // updated finished and saved.
             }
+        }
+
+        public Task UpdateAsync(Product entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
